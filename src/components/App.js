@@ -5,6 +5,8 @@ import Character from './Character';
 class App extends React.Component {
 	constructor(props){
 		super(props);
+
+		this.filterCharacters = this.filterCharacters.bind(this);
 		this.state = {
       characters: []
     };
@@ -20,6 +22,7 @@ componentDidMount(){
 			});
 	});
 }
+
 
 paintCharacters(){
 	const list =[];
@@ -37,26 +40,22 @@ paintCharacters(){
 	}
 	return list;
 	}
-	// 
-	// filterCharacters(e){
-	//  const searchInput = document.querySelector ('search');
-	//  const mytarget= e.target.value;
-	//  if(search.includes("cebolla")){
-	//
-	//  }
-	//
-	// };
 
+	filterCharacters(e){
+		const mytarget= this.e.target.value;
+		console.log(mytarget);
 
+}
 render() {
 	return (
 		<div>
-		<h2>Harry Potter Characters</h2>
-		<input type="text" className="search" />
-		<button>buscar</button>
-  		<div>
-				<ul className="characters_container">{this.paintCharacters()}</ul>
-			</div>
+			<header>
+				<h2 className="header_title">Harry Potter Characters</h2>
+				<input type="text" id="search" className="search" onChange ={this.filterCharacters} />
+			</header>
+			<main>
+					<ul className="characters_container">{this.paintCharacters()}</ul>
+			</main>
 		</div>
 		);
 	}
