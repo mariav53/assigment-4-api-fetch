@@ -3,3 +3,25 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.characters_container{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto;
+	grid-column-gap: 10px;
+	justify-items: center;
+	list-style-type: none;
+		grid-gap: 30px;
+}
+.character_item{
+	width: 250px;
+}
+
+.character_name{
+	font-size: 1.2em;
+}
+
+.character_img{
+	width: 250px;
+	height:250px;
+}
