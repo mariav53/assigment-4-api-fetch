@@ -99,10 +99,6 @@ font-family: 'Roboto', sans-serif;
 .character_img_container:hover{
 	box-shadow: 0px 5px 20px rgba(244,191,27,0.30);
   transform: scale(1.1);
-	/*
-	-webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);*/
 }
 .character_alive{
 	font-size: 24px;
