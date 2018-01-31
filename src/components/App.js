@@ -2,8 +2,11 @@ import React from 'react';
 import Header from './Header';
 import Search from './Search';
 import Character from './Character';
-import lupa from './loupe.png';
-import skull from './human-skull .png';
+import lupa from '../images/loupe.png';
+import gryff from '../images/Gryffindor.png';
+import huff from '../images/Hufflepuff.png';
+import rave from '../images/Ravenclaw.png';
+import sly from '../images/Slytherin.png';
 
 
 class App extends React.Component {
@@ -52,8 +55,8 @@ class App extends React.Component {
 					{characters.map(character => <Character
 						name = {character.name}
 						image = {character.image}
-						house = {character.house}
-						alive ={character.alive ? '' : 'muerto'} />
+						house = {character.house ? character.house : 'N/A'}
+						alive ={character.alive ? '' : '\u271d'} />
 					)}
 				</div>
 		  </div>

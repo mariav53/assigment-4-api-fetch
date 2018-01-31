@@ -107,11 +107,20 @@ class App extends React.Component {
 			<div>
 				<Header />
 				<Search />
-				<section>
-					<ul className="characters_container">{this.paintCharacters()}</ul>
-				</section>
+				<div className="characters_container">
+					{characters.map(character => <Character
+						name = {character.name}
+						image = {character.image}
+						house = {if (character.house}
+						alive ={character.alive ? '' : '\u271d'} />
+					)}
+				</div>
 			</div>
 		);
 	}
 }
 export default App;
+
+
+
+// <img src={`images/${this.props.house}.png`} alt={this.props.house} />

@@ -40,7 +40,7 @@ header{
 	font-family: 'Source Sans Pro', sans-serif;
 	letter-spacing: 2px;
   color: #450307;
-	text-align:
+	text-align: center;
 }
 
 #search {
@@ -119,19 +119,47 @@ font-family: 'Roboto', sans-serif;
 .character_house{
 	font-weight: 500;
 }
-/*.character_alive{
-	text-decoration: line-through;
-}*/
+.character_alive{
+	font-size: 24px;
+}
 
 .character_img{
 	width: 250px;
   height: 250px;
 	transition: all 0.5s ease;
+	border-radius: 2px;
 }
 .character_img:hover{
 	-webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+.house {
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.img--Gryffindor{
+	background-image: url('./images/Gryffindor.png');
+	background-repeat: no-repeat;
+}
+.img--Hufflepuff{
+	background-image: url('./images/Hufflepuff.png');
+	background-repeat: no-repeat;
+}
+
+.img--Ravenclaw{
+	background-image: url('./images/Ravenclaw.png');
+	background-repeat: no-repeat;
+}
+
+.img--Slytherin{
+	background-image: url('./images/Slytherin.png');
+	background-repeat: no-repeat;
 }
 
 /*MEDIAQUERIES*/
