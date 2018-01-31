@@ -3,11 +3,6 @@ import Header from './Header';
 import Search from './Search';
 import Character from './Character';
 import lupa from '../images/loupe.png';
-import gryff from '../images/Gryffindor.png';
-import huff from '../images/Hufflepuff.png';
-import rave from '../images/Ravenclaw.png';
-import sly from '../images/Slytherin.png';
-
 
 class App extends React.Component {
 	constructor(props) {
@@ -38,7 +33,7 @@ class App extends React.Component {
 		console.log(e);
 	}
 
-  	render() {
+  render() {
 		let characters = this.state.characters;
 		if(this.state.myFilterCharacters){
 			characters = characters.filter( character => character.name.toLowerCase().includes(this.state.myFilterCharacters.toLowerCase()))
@@ -48,7 +43,7 @@ class App extends React.Component {
 				<Header />
 				<div className="search_container">
 					<h4>Encuentra a tu personaje favorito</h4>
-					<input type="text" name="search" placeholder="Tu personaje" id="search"  onChange={this.filterCharacters} />
+					<input type="text" name="search" placeholder="Tu personaje" id="search" onChange={this.filterCharacters} />
 					<img src={lupa} />
 				</div>
 				<div className="characters_container">

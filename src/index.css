@@ -5,13 +5,13 @@ body {
 	background: #450307;
 	overflow-x: hidden;
 }
+
 /*CABECERA*/
 header{
 	text-align: center;
 	background: #450307;
 	padding: 20px 0;
 }
-
 .header_title{
 	margin: 0;
   font-size: 2em;
@@ -63,30 +63,6 @@ header{
     padding-bottom: 10px;
 }
 
-#search:focus {outline:0;}
-#search:active {outline: none;}
-
-#search_btn {
-    background: #450307;
-    color: #efac20;
-    border: none;
-    padding: 5px;
-    /* margin-left: 10px; */
-    border-radius: 2px;
-    font-weight: bold;
-		margin-bottom: 10px;
-		font-size: 0.7em
-}
-
-#search_btn:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-		cursor:pointer;
-		background: #2b0205;
-}
-
-#search_btn:focus {outline:0;}
-#search_btn:active {outline: none;border: none;}
-
 /*SECCIÓN PERSONAJES*/
 .characters_container{
 	text-align: center;
@@ -95,19 +71,15 @@ header{
 font-family: 'Roboto', sans-serif;
 	list-style-type: none;
 	display: grid;
-	/* width: 180px;
-	margin:0 auto; */
 	grid-template-columns: 1fr;
 	grid-gap: 15px;
 	margin-bottom: 20px;
 	padding: 0;
 	justify-content: center;
 }
-
 .character_name{
 	font-size: 1.5em;
 }
-
 .character_img_container{
 	width: 250px;
 	height: 250px;
@@ -116,36 +88,34 @@ font-family: 'Roboto', sans-serif;
 	background-size: cover;
 	margin: 0 auto;
 	margin-bottom: 10px;
-}
-
-.character_img{
-	width: 250px;
-	height: 250px;
+	border-radius: 5px;
 	transition: all 0.5s ease;
-	border-radius: 2px;
 }
-.character_img:hover{
+.character_img{
+	width: 0;
+	height: 0;
+
+}
+.character_img_container:hover{
+	box-shadow: 0px 5px 20px rgba(244,191,27,0.30);
+  transform: scale(1.1);
+	/*
 	-webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-.character_house{
-	font-weight: 500;
+  transform: scale(1.1);*/
 }
 .character_alive{
 	font-size: 24px;
+	margin: 0;
+	margin-bottom: 15px;
 }
-
-
 .house {
-    width: 250px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0 auto;
+  width: 250px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
 }
-
 .img--Gryffindor{
 	background-image: url('./images/Gryffindor.png');
 	background-repeat: no-repeat;
@@ -154,15 +124,21 @@ font-family: 'Roboto', sans-serif;
 	background-image: url('./images/Hufflepuff.png');
 	background-repeat: no-repeat;
 }
-
 .img--Ravenclaw{
 	background-image: url('./images/Ravenclaw.png');
 	background-repeat: no-repeat;
 }
-
 .img--Slytherin{
 	background-image: url('./images/Slytherin.png');
 	background-repeat: no-repeat;
+}
+.character_house{
+	font-weight: 500;
+}
+.nTitle{
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #efac20;
+	font-size: 1.1em;
 }
 
 /*MEDIAQUERIES*/
@@ -181,12 +157,9 @@ font-family: 'Roboto', sans-serif;
 		margin-left: 20px;
   }
 	.search_container img {
-	    margin-left: 20px;
-	    padding-bottom: 10px;
+	  margin-left: 20px;
+	  padding-bottom: 10px;
 	}
-	#search_btn {
-  	margin-left: 10px;
-  }
 	.characters_container{
 		padding-top: 30px;
 		justify-items: center;
@@ -195,9 +168,6 @@ font-family: 'Roboto', sans-serif;
 		min-width: 100%;
 		grid-gap: 15px;
 	}
-	/* .character_item{
-		grid-column:span 3;
-	} */
 	.header_title{
 	  font-size: 2.8em;
 	}
