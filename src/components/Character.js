@@ -11,7 +11,9 @@ render(){
 	return(
 			<div className="character_item">
 				<h2 className="character_name">{this.props.name}</h2>
-				<img src={this.props.image} className="character_img" alt={this.props.name} />
+				<div className="character_img_container" style={{background:`url(${this.props.image})`}}>
+					<img src={this.props.image} className="character_img" alt={this.props.name} />
+				</div>
 				<div className={`house img--${this.props.house}`}>
 					<h4 className="character_house"> <span className="nTitle">CASA:</span> {this.props.house.toUpperCase()} </h4>
 				</div>
