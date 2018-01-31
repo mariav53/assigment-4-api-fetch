@@ -5,7 +5,7 @@ Desarrollar una página web con un listado de personajes de Harry Potter, donde 
 
 ## Especificaciones
 ### 1.Listado de personajes
-Realizar una web con el listado de personajes de Harry Potter, utilizando el servicio de[http://hp-api.herokuapp.com/] que nos devuelve bastante información sobre 25 personajes de la saga. Sobre cada uno, vamos a pintar al menos:
+Realizar una web con el listado de personajes de Harry Potter, utilizando el servicio de http://hp-api.herokuapp.com/ que nos devuelve bastante información sobre 25 personajes de la saga. Sobre cada uno, vamos a pintar al menos:
 - Nombre
 - Foto
 - Casa
