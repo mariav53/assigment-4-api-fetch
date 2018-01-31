@@ -119,9 +119,9 @@ font-family: 'Roboto', sans-serif;
 .character_house{
 	font-weight: 500;
 }
-.character_alive{
+/*.character_alive{
 	text-decoration: line-through;
-}
+}*/
 
 .character_img{
 	width: 250px;

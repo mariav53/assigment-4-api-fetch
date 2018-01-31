@@ -2,68 +2,63 @@ import React from 'react';
 import Header from './Header';
 import Search from './Search';
 import Character from './Character';
+import lupa from './loupe.png';
+import skull from './human-skull .png';
 
 
 class App extends React.Component {
-	constructor(props){
+	constructor(props) {
 		super(props);
-
-		// this.filterCharacters = this.filterCharacters.bind(this);
+		this.filterCharacters = this.filterCharacters.bind(this);
 		this.state = {
-      characters: []
-	  };
-	}
+			characters: [],
+			myFilterCharacters:false
+		};
+	};
 
-	componentWillMount(){
+	componentWillMount() {
 		fetch('http://hp-api.herokuapp.com/api/characters')
-			.then(response => response.json())
-			.then(json => {
-				const arrayList = json
-					this.setState({
-					characters: arrayList
-				});
+		.then(response => response.json())
+		.then(json => {
+			const myArray = json
+			this.setState({
+				characters: myArray
+			});
+		console.log(this.state.characters);
 		});
 	}
-	paintCharacters(){
-		let list =[];
-		for(let listOfCharacters of this.state.characters ){
-		list.push(
-			<li>
-				<Character
-					name = {listOfCharacters.name}
-					image = {listOfCharacters.image}
-					house = {listOfCharacters.house}
-					alive ={listOfCharacters.alive ? '' : 'Muerto'}
-				/>
-			</li>
-			);
-		}
-		return list;
-		}
 
-		filterCharacters(e){
+	filterCharacters(e){
 		this.setState({
-			filter: e.target.value
+			myFilterCharacters: e.target.value
 		})
 		console.log(e);
 	}
-	// }
 
-
-	render() {
-		let listOfFilterCharacters = this.state.characters;
-		if(this.state.filter){
-			listOfFilterCharacters = listOfFilterCharacters.filter( listOfFilterCharacters => listOfFilterCharacters.name.toLowerCase().includes(this.state.filter.toLowerCase()))
+  	render() {
+		let characters = this.state.characters;
+		if(this.state.myFilterCharacters){
+			characters = characters.filter( character => character.name.toLowerCase().includes(this.state.myFilterCharacters.toLowerCase()))
 		}
-		return (
+    return (
 			<div>
 				<Header />
-				<Search />
-				<section>
-					<ul className="characters_container">{this.paintCharacters()}</ul>
-				</section>
-			</div>
-		);
-	}
+				<div className="search_container">
+					<h4>Encuentra a tu personaje favorito</h4>
+					<input type="text" name="search" placeholder="Tu personaje" id="search"  onChange={this.filterCharacters} />
+					<img src={lupa} />
+				</div>
+				<div className="characters_container">
+					{characters.map(character => <Character
+						name = {character.name}
+						image = {character.image}
+						house = {character.house}
+						alive ={character.alive ? '' : 'muerto'} />
+					)}
+				</div>
+		  </div>
+    );
+  }
 }
+
 export default App;
