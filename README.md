@@ -1,7 +1,7 @@
 #  Evaluación Sprint #4 Adalab
 Desarrollar una página web con un listado de personajes de Harry Potter, donde podamos filtrar por el nombre del personaje, utilizando React
 
-![imagen design](/src/images/design.png)
+![imagen design](/src/images/HPApi.png)
 
 ## Especificaciones
 ### 1.Listado de personajes
