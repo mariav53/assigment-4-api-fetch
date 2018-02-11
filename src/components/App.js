@@ -4,18 +4,21 @@ import Search from './Search';
 import Character from './Character';
 import lupa from '../images/loupe.png';
 
+
 class App extends React.Component {
 	constructor(props) {
 		super(props);
+
 		this.filterCharacters = this.filterCharacters.bind(this);
-		this.state = {
+			this.state = {
 			characters: [],
-			myFilterCharacters:false
+			myFilterCharacters:'',
+			casas: ''
 		};
 	};
 
-	componentWillMount() {
-		fetch('http://hp-api.herokuapp.com/api/characters')
+	componentDidMount() {
+		fetch('https://hp-api.herokuapp.com/api/characters')
 		.then(response => response.json())
 		.then(json => {
 			const myArray = json
@@ -30,21 +33,19 @@ class App extends React.Component {
 		this.setState({
 			myFilterCharacters: e.target.value
 		})
-		console.log(e);
+		console.log(e.target.value);
 	}
 
   render() {
 		let characters = this.state.characters;
-		if(this.state.myFilterCharacters){
 			characters = characters.filter( character => character.name.toLowerCase().includes(this.state.myFilterCharacters.toLowerCase()))
-		}
+			.filter(character => character.house.toLowerCase().includes(this.state.casas.toLowerCase()))
+
     return (
 			<div>
 				<Header />
 				<div className="search_container">
-					<h4>Encuentra a tu personaje favorito</h4>
-					<input type="text" name="search" placeholder="Tu personaje" id="search" onChange={this.filterCharacters} />
-					<img src={lupa} />
+					<Search onChangeSearch ={this.filterCharacters}/>
 				</div>
 				<div className="characters_container">
 					{characters.map(character => <Character
